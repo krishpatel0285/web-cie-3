@@ -1,0 +1,26 @@
+AUTOHAVEN — QUICK SETUP
+
+1. Extract AutoHaven_Car_Showroom.zip.
+2. Open the extracted AutoHaven folder in VS Code.
+3. Open Terminal > New Terminal.
+4. Make sure the terminal is in the folder containing AutoHaven.csproj.
+5. Run these commands one at a time:
+
+   dotnet restore
+   dotnet build
+   dotnet run
+
+6. Open the localhost URL shown in the terminal.
+7. Explore the collection, open a vehicle, create an account, sign in, and submit a showroom visit request.
+
+Requirements: .NET 10 SDK. No MySQL, database server, or extra NuGet package is required.
+
+GitHub upload (after testing; create an empty repository first):
+   git init
+   git add .
+   git commit -m "Initial commit - AutoHaven Car Showroom"
+   git branch -M main
+   git remote add origin https://github.com/FRIEND_USERNAME/AutoHaven.git
+   git push -u origin main
+
+Replace FRIEND_USERNAME with your friend's GitHub username. If a remote already exists, check `git remote -v` before adding one. Local JSON data is excluded from Git.

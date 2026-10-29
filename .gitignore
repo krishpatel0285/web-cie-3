@@ -1,0 +1,7 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+AutoHaven_Data/
+appsettings.Development.json

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AutoHaven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+<header class="topbar"><div class="container nav-wrap"><a class="brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">A</span><span>AUTO<span class="brand-light">HAVEN</span><small>THE CURATED MOTOR COLLECTION</small></span></a>
+<button class="nav-toggle" type="button" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<nav class="nav-links"><a asp-controller="Home" asp-action="Index">Home</a><a asp-controller="Cars" asp-action="Index">The Collection</a><a href="/Home/Index#experience">Our Experience</a></nav>
+<div class="nav-actions">@if (Context.Session.GetString("UserName") is string userName) { <span class="welcome-user">Hi, @userName</span><form asp-controller="Account" asp-action="Logout" method="post"><button class="btn btn-outline btn-small" type="submit">Sign out</button></form> } else { <a class="nav-login" asp-controller="Account" asp-action="Login">Sign in</a><a class="btn btn-gold btn-small" asp-controller="Account" asp-action="Register">Join us <span>↗</span></a> }</div></div></header>
+@if (TempData["Success"] is string success) { <div class="flash container">@success</div> }
+<main>@RenderBody()</main>
+<footer class="footer"><div class="container footer-grid"><div><a class="brand footer-brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">A</span><span>AUTO<span class="brand-light">HAVEN</span><small>THE CURATED MOTOR COLLECTION</small></span></a><p>Exceptional cars. Considered choices.<br>Find the one that feels like yours.</p></div><div><h4>Explore</h4><a asp-controller="Cars" asp-action="Index">All vehicles</a><a href="/Home/Index#experience">Our experience</a></div><div><h4>Visit us</h4><span>Mon – Sat · 10:00 AM – 7:00 PM</span><span>Surat, Gujarat, India</span><span>hello@autohaven.example</span></div></div><div class="container footer-bottom"><span>© @DateTime.Now.Year AutoHaven Motors</span><span>Drive something extraordinary.</span></div></footer>
+<script src="~/js/site.js" asp-append-version="true"></script>
+</body></html>
